@@ -1,0 +1,113 @@
+/* My History Section styles */
+.myhistory-section {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 139px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px; /* Adjusted horizontal padding */
+}
+
+#Recordtable {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    overflow-x: auto;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Increased shadow */
+    display: flex;
+    align-items: center;
+}
+
+#searchInput,
+#searchCriteria {
+    flex: 1;
+    border: 1px solid #ced4da; /* Added border */
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 12px; /* Increased padding */
+}
+
+#searchCriteria {
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+}
+
+#searchCriteria:focus,
+#searchInput:focus {
+    outline: none;
+    border-color: #4d94ff; /* Changed border color on focus */
+}
+
+.back-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    margin-right: 15px;
+    width: 120px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    max-height: 330px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th,
+.table tbody td {
+    padding: 15px;
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.fixTableHead {
+    overflow: hidden;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #Recordtable {
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchInput,
+    #searchCriteria {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+    }
+}

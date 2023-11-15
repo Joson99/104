@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/viewprofile.css">
+    <link rel="stylesheet" href="assets/css/username-indicator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+    <title>Joson-Perey Dental Clinic</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <p>Opening Hours: 8 AM - 5 PM, closed every Wednesday and Sunday</p>
+        </div>
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/images/Header/logo.png" alt="Logo Image">
+                <div class="logo-text">Joson-Perey</div>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="home()" class="header-links" href="#home">Home</a></li>
+                <li><a onclick="services()" class="header-links" href="#services">Services</a></li>
+                <li><a onclick="doctors()" class="header-links" href="#doctors">Doctors</a></li>
+                <li><a onclick="aboutus()" class="header-links" href="#about-us">About Us</a></li>
+                <li><a onclick="contact()" class="header-links" href="#contact">Contact</a></li>
+                <a class="book-appointment" href="#book-appointment">Book Appointment</a>
+            </ul>
+        </div>
+
+        <div class="username-indicator" id="username-indicator" style="display: none;">
+                <p>You are logged in as: <span id="username-span"></span></p>
+        </div>
+    </header>
+    
+    <!-- Top -->
+    <section class="top" id="top">
+        <div class="topContainer"></div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section" id="profile-section">
+        <div class="profile-form">
+            <center><h2>My Profile</h2></center>
+            <ul class="profile-nav">
+                <li class="profile-nav-item active" data-target="account-info">Account Information</li>
+                <li class="profile-nav-item" data-target="personal-info">Personal Information</li>
+                <li class="profile-nav-item" data-target="contact-info">Contact Information</li>
+                <li class="profile-nav-item" data-target="address-info">Address Details</li>
+            </ul>
+            <form>
+                <div class="form-row" id="account-info">
+                    <div class="form-column">
+                        <fieldset>
+                            <legend>Account Information</legend>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" name="confirm-password" disabled required>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-row" id="personal-info" style="display: none;">
+                    <div class="form-column">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first-name" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="middle-name">Middle Name</label>
+                                <input type="text" id="middle-name" name="middle-name" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date-of-birth">Date of Birth</label>
+                                <input type="text" placeholder="Date of Birth" id="date-of-birth" name="date-of-birth" readonly disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" disabled required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="civil-status">Civil Status</label>
+                                <select id="civil-status" name="civil-status" disabled required>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-row" id="contact-info" style="display: none;">
+                    <div class="form-column">
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="tel" id="phone-number" name="phone-number" disabled required>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-row" id="address-info" style="display: none;">
+                    <div class="form-column">
+                        <fieldset>
+                            <legend>Address Details</legend>
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input type="text" id="province" name="province" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city-municipality">City/Municipality</label>
+                                <input type="text" id="city-municipality" name="city-municipality" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="barangay">Barangay</label>
+                                <input type="text" id="barangay" name="barangay" disabled required>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="submit">
+                        <button id="editProfileButton" type="button" onclick="enableFields()">Edit</button>
+                        <button id="saveProfileButton" type="button" onclick="UpdateDetails()" disabled>Save</button>
+                        <button type="button" onclick="home()">Back</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Joson-Perey</p>
+    </footer>
+
+    <!-- Scroll-to-top button -->
+    <div class="scroll-to-top" id="scrollToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Firebase configuration -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/viewprofile.js"></script>
+    <script src="assets/js/viewprofileupdate.js"></script>
+    <script src="assets/js/headerlinks.js"></script>
+    <script src="assets/js/body.js"></script>
+    <script src="assets/js/homeslider.js"></script>
+</body>
+</html>
